@@ -3,12 +3,16 @@ package org.ethan.cloud.dao.controller;
 import org.ethan.cloud.entries.Dept;
 import org.ethan.cloud.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class DeptController {
+
+    @Autowired
+    private DiscoveryClient client;
 
     @Autowired
     private DeptService deptService;

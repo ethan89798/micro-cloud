@@ -5,7 +5,7 @@
 <mapper namespace="org.ethan.cloud.dao.DeptDao">
 
     <select id="findById" resultType="Dept" parameterType="Long">
-		select dept_id,dept_name,db_source from dept where deptno=#{deptno}
+		select dept_id,dept_name,db_source from dept where dept_id=#{deptno}
 	</select>
     <select id="findAll" resultType="Dept">
 		select dept_id,dept_name,db_source from dept

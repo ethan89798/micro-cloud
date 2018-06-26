@@ -20,4 +20,18 @@ spring:
       max-idle: 5
       max-wait-millis: 200
       test-while-idle: false
+##eureka客户端要向Eureka服务端注册的地址
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    instance-id: micro-cloud-dept8001   #使用这个名字在eureka注册显示
+    prefer-ip-address: true   #访问路径使用IP地址
 
+info:
+  app.name: learn-micro-cloud
+  company.name: ethan
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

@@ -10,6 +10,10 @@
     <modules>
         <module>micro-cloud-api</module>
         <module>micro-cloud-provider-dept-8001</module>
+        <module>micro-cloud-consumer-dept-80</module>
+        <module>micro-cloud-eureka-7001</module>
+        <module>micro-cloud-eureka-7002</module>
+        <module>micro-cloud-eureka-7003</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -83,5 +87,26 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <finalName>micro-cloud</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
