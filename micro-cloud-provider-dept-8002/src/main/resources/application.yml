@@ -11,7 +11,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://localhost/cloud01?characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://localhost/cloud02?characterEncoding=utf8&useSSL=true
     username: root
     password: 123456
     dbcp2:
@@ -27,7 +27,7 @@ eureka:
       #defaultZone: http://localhost:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
   instance:
-    instance-id: micro-cloud-dept-8001   #使用这个名字在eureka注册显示
+    instance-id: micro-cloud-dept-8002   #使用这个名字在eureka注册显示
     prefer-ip-address: true   #访问路径使用IP地址
 
 info:
