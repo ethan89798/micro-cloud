@@ -11,7 +11,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://localhost/cloud02?characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://localhost:3306/cloud02?characterEncoding=utf8&useSSL=true
     username: root
     password: 123456
     dbcp2:
