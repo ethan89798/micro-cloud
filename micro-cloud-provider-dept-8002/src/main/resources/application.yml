@@ -4,7 +4,7 @@ server:
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
   type-aliases-package: org.ethan.cloud.entries
-  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
 spring:
   application:
     name: micro-cloud-dept
