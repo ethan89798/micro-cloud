@@ -1,4 +1,4 @@
-package org.ethan.cloud.dao.controller;
+package org.ethan.cloud.controller;
 
 import org.ethan.cloud.entries.Dept;
 import org.ethan.cloud.service.DeptService;

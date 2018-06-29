@@ -11,7 +11,7 @@
 		select dept_id,dept_name,db_source from dept
 	</select>
     <insert id="addDept" parameterType="Dept">
-		INSERT INTO dept(dept_name,db_source) VALUES(#{dname},DATABASE())
+		INSERT INTO dept(dept_name,db_source) VALUES(#{deptName},DATABASE())
 	</insert>
 
 </mapper>
