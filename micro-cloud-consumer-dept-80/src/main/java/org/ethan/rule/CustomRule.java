@@ -64,7 +64,7 @@ public class CustomRule {
 
                     if (server == null) {
                         Thread.yield();
-                        return null;
+                        continue;
                     }
 
                     if (server.isAlive() && server.isReadyToServe()) {
@@ -81,19 +81,16 @@ public class CustomRule {
             }
 
             private int incrementAndGetModulo(int modulo) {
-                for (; ; ) {
-                    int count = currentServerRequestCounter.get();
-                    if (count < 5) {
-                        currentServerRequestCounter.incrementAndGet();
-                        return nextServerCyclicCounter.get();
-                    } else {
-                        int index = nextServerCyclicCounter.incrementAndGet();
-                        if (index > modulo) {
-                            index = 0;
-                            nextServerCyclicCounter.set(0);
-                        }
-                        return index;
+                int count = currentServerRequestCounter.getAndIncrement();
+                if (count < 5) {
+                    return nextServerCyclicCounter.get();
+                } else {
+                    int index = nextServerCyclicCounter.incrementAndGet();
+                    if (index > modulo) {
+                        index = 0;
+                        nextServerCyclicCounter.set(0);
                     }
+                    return index;
                 }
             }
 
