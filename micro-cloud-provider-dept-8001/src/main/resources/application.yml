@@ -4,7 +4,8 @@ server:
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
   type-aliases-package: org.ethan.cloud.entries
-  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
 spring:
   application:
     name: micro-cloud-dept
@@ -20,6 +21,7 @@ spring:
       max-idle: 5
       max-wait-millis: 200
       test-while-idle: false
+
 ##eureka客户端要向Eureka服务端注册的地址
 eureka:
   client:
