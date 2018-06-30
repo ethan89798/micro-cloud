@@ -85,8 +85,9 @@ public class CustomRoundRobinRule extends AbstractLoadBalancerRule {
         if (count < 5) {
             return nextServerCyclicCounter.get();
         } else {
-            currentServerRequestCounter.compareAndSet(count, 0);
+            currentServerRequestCounter.compareAndSet(count, 1);
             int index = nextServerCyclicCounter.incrementAndGet();
+            log.error("count={}, index={}, total={}", count, index, modulo);
             if (index >= modulo) {
                 nextServerCyclicCounter.compareAndSet(index,0);
                 index = 0;
