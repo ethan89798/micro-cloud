@@ -23,7 +23,7 @@ info:
 zuul:
   routes:
     myDept.serviceId: micro-cloud-dept
-    myDept.path: mydept/**
+    myDept.path: /mydept/**
   #ignored-services: micro-cloud-dept ##也可以使用*来匹配所有服务都被过滤
-  ignored-services: *
+  ignored-services: "*"
   prefix: /ethan
