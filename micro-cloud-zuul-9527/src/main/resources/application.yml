@@ -13,8 +13,17 @@ eureka:
     instance-id: gateway9527.com
     prefer-ip-address: true
 
+
 info:
   app.name: learn-micro-cloud
   company.name: ethan
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+
+zuul:
+  routes:
+    myDept.serviceId: micro-cloud-dept
+    myDept.path: mydept/**
+  #ignored-services: micro-cloud-dept ##也可以使用*来匹配所有服务都被过滤
+  ignored-services: *
+  prefix: /ethan
