@@ -1,19 +1,11 @@
 package org.ethan.rule;
 
-import com.netflix.client.config.IClientConfig;
-import com.netflix.loadbalancer.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.netflix.loadbalancer.IRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-
 @Configuration
 public class CustomRule {
-
-    private static Logger log = LoggerFactory.getLogger(CustomRule.class);
 
     @Bean
     public IRule getRule() {
