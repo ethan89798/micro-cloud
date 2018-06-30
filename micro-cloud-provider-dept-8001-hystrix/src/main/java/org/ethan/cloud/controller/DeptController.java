@@ -19,6 +19,13 @@ public class DeptController {
     @Autowired
     private DeptService deptService;
 
+    /**
+     * 如果不想每个方法都使用这个熔断注解,可以在客户端进行aop的编程
+     * 重写一个类实现FallbackFactory<>然后重写返回方法
+     * 请参考api-->DeptClientFallbackFactory
+     * @param dept
+     * @return
+     */
     @PostMapping("/dept/add")
     @HystrixCommand(fallbackMethod = "fallBackAdd")
     public boolean add(@RequestBody Dept dept) {

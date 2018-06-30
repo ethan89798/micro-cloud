@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@FeignClient(name = "MICRO-CLOUD-DEPT")
+@FeignClient(name = "MICRO-CLOUD-DEPT", fallbackFactory = DeptClientFallbackFactory.class)
 public interface DeptClientService {
 
     @RequestMapping(value = "/dept/add")
