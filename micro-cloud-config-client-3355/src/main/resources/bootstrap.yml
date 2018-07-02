@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      #配置需要从github上读取的资源文件名,注意后面没有yml
+      name: application-config-client
+      prfile: dev
+      label: master
+      #本微服务启动后先去3344号服务,再通过SpringCloud获取github服务地址
+      uri: http://config3344.com:3344

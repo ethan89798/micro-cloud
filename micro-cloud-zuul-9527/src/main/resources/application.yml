@@ -22,8 +22,10 @@ info:
 
 zuul:
   routes:
+    ##使用mydept来替换micro-cloud-dept的服务名
     myDept.serviceId: micro-cloud-dept
     myDept.path: /mydept/**
   #ignored-services: micro-cloud-dept ##也可以使用*来匹配所有服务都被过滤
   ignored-services: "*"
+  ##增加服务前缀
   prefix: /ethan

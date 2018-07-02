@@ -20,6 +20,8 @@
         <module>micro-cloud-provider-dept-8001-hystrix</module>
         <module>micro-cloud-comsumer-hystrix-dashboard</module>
         <module>micro-cloud-zuul-9527</module>
+        <module>micro-cloud-config-3344</module>
+        <module>micro-cloud-config-client-3355</module>
     </modules>
     <packaging>pom</packaging>
 
